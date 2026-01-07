@@ -7,11 +7,6 @@
     display: arXiv (2025)
   highlight: 1
 
-    display: npj Quantum Materials 6, 7 (2021)
-  highlight: 0
-  news2:
-
-
 - title: "Observation of flat bands in twisted bilayer graphene"
   image: TBG_ARPES.png
   description: A first paper from the TBG collaboration is online, with beautiful data from the Baumberger group in Geneva, and great devices from the Efetov group at ICFO. We measured STM on the device.
