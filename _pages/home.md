@@ -6,12 +6,9 @@ sitemap: false
 permalink: /
 ---
 
-Adam Rozman is a computational engineer specializing in 
-
- specializing in the aerodynamics and acoustics of rotorcraft. My work utilizes high-performance computing (HPC) and advanced turbulence modeling (such as DDES) to solve complex unsteady flow problems. Currently, I am developing analytical models for Turbulence Ingestion Noise (TIN) to improve broadband noise predictions for multirotor vehicles in edgewise flight and gusty conditions.
-
-
-
-
-Adam Rozman is a computational engineer studying unsteady fluid mechanics and acoustics. He is a PhD candidate at Boston University.
-
+I specialize in aerodynamics and aeroacoustics modeling. 
+My current research focus is obtaining comprehensive noise predictions of multirotor vehicles arising from their complex aerodynamic interactions.
+My expertise includes high-performance computing and turbulence modeling such as hybrid RANS/LES and transitional Reynolds number flows. 
+Some other contributions include implementing workflow automation that have enabled the training of two physics-informed machine learning surrogate models for performance of arbitrary propeller geometries and a control algorithm for a quadrotor vehicle.
+I have am experienced with parallelization and code optimization. 
+Currently, I am developing an analytical model for Turbulence Ingestion Noise which is a dominant noise source for multirotor vehicles.
