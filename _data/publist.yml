@@ -1,3 +1,51 @@
+- title: "Gradient-Enhanced Partitioned Gaussian Processes for Real-Time Quadrotor Dynamics Modeling"
+  description: This work introduces a novel gradient-enhanced Gaussian process approach to improve the accuracy and speed of quadrotor flight dynamics modeling, enabling high-fidelity real-time simulations.
+  authors: A. Rozman
+  link:
+    url: #
+    display: IEEE Transactions on Robotics (Pending)
+  highlight: 1
+
+- title: "Prediction of performance and noise of a small quadrotor using CHARM"
+  description: A study utilizing the CHARM software to predict the aerodynamic performance and acoustic signature of small-scale quadrotors, validated against experimental benchmarks.
+  authors: A. Rozman, E. Macrae-Sadek, M. Cable, D. Gardner, S. Grace
+  link:
+    url: #
+    display: AIAA SciTech Forum (2026)
+  highlight: 1
+
+- title: "Evaluation of Urban-Flow-Informed Gusts on eVTOL Vertiport Approach Acoustics"
+  description: Investigating how turbulent urban wind environments and gusts impact the noise levels of eVTOL aircraft during the critical approach phase to vertiports.
+  authors: A. A. Rozman, S. Grace
+  link:
+    url: https://doi.org/10.2514/6.2025-3003
+    display: AIAA Aviation Forum (2025)
+  highlight: 1
+
+- title: "A Machine Learning Model for Rotor Blade Efficiency Prediction"
+  description: Development of a machine learning framework designed to rapidly predict rotor blade efficiency, streamlining the design process for next-generation rotorcraft.
+  authors: C. Hess, A. Rozman, P. Anusonthi-Inthra, R. Healy
+  link:
+    url: #
+    display: AIAA Aviation Forum (2025)
+  highlight: 0
+
+- title: "Evaluating the Permeable Surface Approach for Wing-Propeller Aeroacoustics Using High-Fidelity CFD"
+  description: An evaluation of the permeable surface method in CFD for capturing complex aeroacoustic interactions between wings and propellers in distributed electric propulsion systems.
+  authors: A. Rozman, Z. H. Jia, S. A. Tran, S. Grace
+  link:
+    url: #
+    display: VFS Aeromechanics Specialists' Conf (2024)
+  highlight: 0
+
+- title: "Investigating Ground Interactions of a Rotorcraft Landing Vehicle on Titan"
+  description: An undergraduate honors thesis exploring the unique aeromechanical challenges of landing a rotorcraft on Saturn's moon, Titan, focusing on ground-effect interactions.
+  authors: A. Rozman
+  link:
+    url: https://stars.library.ucf.edu/honorstheses/1196
+    display: Honors Undergraduate Thesis (2022)
+  highlight: 0
+  
 - title: "Cryogenic geometric anti-spring vibration isolation system"
   image: GAS.png
   description: TLow temperature and low vibration levels are key for scanning probe microscopy, large-mass quantum mechanics, and gravitational wave detection. Here we develop and present a new cryogenic GAS system to achieve such environments. 
