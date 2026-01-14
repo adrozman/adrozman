@@ -6,9 +6,13 @@ sitemap: false
 permalink: /
 ---
 
-I specialize in aerodynamics and aeroacoustics modeling. 
-My current research focus is obtaining comprehensive noise predictions of multirotor vehicles arising from their complex aerodynamic interactions.
-My expertise includes high-performance computing and turbulence modeling such as hybrid RANS/LES and transitional Reynolds number flows. 
-Some other contributions include implementing workflow automation that have enabled the training of two physics-informed machine learning surrogate models for performance of arbitrary propeller geometries and a control algorithm for a quadrotor vehicle.
-I have am experienced with parallelization and code optimization. 
-Currently, I am developing an analytical model for Turbulence Ingestion Noise which is a dominant noise source for multirotor vehicles.
+I am an aerodynamics and aeroacoustics specialist focusing on the noise created by the complex fluid interactions of multirotor vehicles.
+
+I leverage multi-fidelity computational approaches with applications varying from the rapid generation of large datasets using analytical methods to high-fidelity CFD investigations of propeller physics.
+
+My expertise includes hybrid RANS/LES turbulence modeling and transitional Reynolds number flows, supported by experience in code optimization and parallelization for high-performance computing environments.
+
+
+My other contributions include developing automated workflows applying design of experiments to train physics-informed machine learning surrogate models to predict the performance of arbitrary propeller geometries and optimize quadrotor control algorithms.
+
+Currently, I am developing an analytical model for Turbulence Ingestion Noise which is a dominant noise source for next generation multirotor systems such as Advanced Air Mobility.
