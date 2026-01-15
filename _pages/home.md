@@ -8,7 +8,7 @@ permalink: /
 
 <div class="row" markdown="0">
   <div class="col-sm-4">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/headshot.JPG" class="img-fluid" style="border-radius: 15%; margin-bottom: 20px;">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/headshot.JPG" class="img-fluid" style="border-radius: 15%; margin-bottom: 20px; max-width: 180px;">
   </div>
   <div class="col-sm-8">
   I am an aerodynamics and aeroacoustics specialist focusing on the noise created by the complex fluid interactions of multirotor vehicles.
