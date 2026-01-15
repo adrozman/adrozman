@@ -6,7 +6,7 @@ sitemap: false
 permalink: /
 ---
 
-<div class="row">
+<div class="row" markdown="0">
   <div class="col-sm-4">
     <img src="{{ site.url }}{{ site.baseurl }}/images/headshot.JPG" class="img-fluid" style="border-radius: 15%; margin-bottom: 20px;">
   </div>
