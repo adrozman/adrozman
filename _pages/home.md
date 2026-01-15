@@ -7,7 +7,7 @@ permalink: /
 ---
 
 <div class="clearfix" markdown="0">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/headshot.JPG" style="float: left; border-radius: 15%; margin-bottom: 20px; max-width: 180px;">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/headshot.JPG" style="float: left; border-radius: 15%; margin-bottom: 20px; margin-right: 25px; max-width: 180px;">
   <p>
   I am an aerodynamics and aeroacoustics specialist focusing on the noise created by the complex fluid interactions of multirotor vehicles.
   I leverage multi-fidelity computational approaches with applications varying from the rapid generation of large datasets using analytical methods to high-fidelity CFD investigations of propeller physics.
