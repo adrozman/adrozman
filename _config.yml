@@ -17,6 +17,9 @@ include:
   - .htaccess
   - _pages
 
+plugins:
+  - jekyll-sitemap
+
 sass:
   sass_dir: _sass
 
