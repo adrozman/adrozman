@@ -1,66 +1,53 @@
 - title: "Gradient-Enhanced Partitioned Gaussian Processes for Real-Time Quadrotor Dynamics Modeling"
-  description: This work introduces a novel gradient-enhanced Gaussian process approach to improve the accuracy and speed of quadrotor flight dynamics modeling, enabling high-fidelity real-time simulations.
-  authors: A. Rozman
+  image: CHARM_workflow.png
+  description: A novel gradient-enhanced Gaussian process approach to improve the accuracy and speed of quadrotor flight dynamics modeling, enabling high-fidelity real-time simulations.
+  authors: L. Sang, A. Rozman, S. Grace, R. Tron
   link:
-    url: #
+    url:
     display: IEEE Transactions on Robotics (Pending)
-  highlight: 1
+  highlight: 0
 
 - title: "Prediction of performance and noise of a small quadrotor using CHARM"
+  image: endurance_OASPL_directivity.png
   description: A study utilizing the CHARM software to predict the aerodynamic performance and acoustic signature of small-scale quadrotors, validated against experimental benchmarks.
   authors: A. Rozman, E. Macrae-Sadek, M. Cable, D. Gardner, S. Grace
   link:
-    url: #
+    url: https://www.researchgate.net/publication/399742531_Prediction_of_performance_and_noise_of_a_small_quadrotor_using_CHARM
     display: AIAA SciTech Forum (2026)
   highlight: 1
 
 - title: "Evaluation of Urban-Flow-Informed Gusts on eVTOL Vertiport Approach Acoustics"
+  image:: palm_disturbance_spectrogram.png
   description: Investigating how turbulent urban wind environments and gusts impact the noise levels of eVTOL aircraft during the critical approach phase to vertiports.
-  authors: A. A. Rozman, S. Grace
+  authors: A. Rozman, S. Grace
   link:
     url: https://doi.org/10.2514/6.2025-3003
     display: AIAA Aviation Forum (2025)
   highlight: 1
 
 - title: "A Machine Learning Model for Rotor Blade Efficiency Prediction"
+  image: FM_removed_pair_n=14.png
   description: Development of a machine learning framework designed to rapidly predict rotor blade efficiency, streamlining the design process for next-generation rotorcraft.
   authors: C. Hess, A. Rozman, P. Anusonthi-Inthra, R. Healy
   link:
-    url: #
+    url: https://doi.org/10.2514/6.2025-3636
     display: AIAA Aviation Forum (2025)
-  highlight: 0
+  highlight: 1
 
 - title: "Evaluating the Permeable Surface Approach for Wing-Propeller Aeroacoustics Using High-Fidelity CFD"
+  image: AART_permeable_setup.png
   description: An evaluation of the permeable surface method in CFD for capturing complex aeroacoustic interactions between wings and propellers in distributed electric propulsion systems.
   authors: A. Rozman, Z. H. Jia, S. A. Tran, S. Grace
   link:
     url: #
     display: VFS Aeromechanics Specialists' Conf (2024)
-  highlight: 0
+  highlight: 1
 
 - title: "Investigating Ground Interactions of a Rotorcraft Landing Vehicle on Titan"
+  image: dragonfly_brownout.png
   description: An undergraduate honors thesis exploring the unique aeromechanical challenges of landing a rotorcraft on Saturn's moon, Titan, focusing on ground-effect interactions.
   authors: A. Rozman
   link:
     url: https://stars.library.ucf.edu/honorstheses/1196
     display: Honors Undergraduate Thesis (2022)
   highlight: 0
-  
-- title: "Cryogenic geometric anti-spring vibration isolation system"
-  image: GAS.png
-  description: TLow temperature and low vibration levels are key for scanning probe microscopy, large-mass quantum mechanics, and gravitational wave detection. Here we develop and present a new cryogenic GAS system to achieve such environments. 
-  authors: L. Feenstra, S. Dominguez-Calderon, K. van Oosten, H. S. M. Bohemen, T. Benschop, M. Brinkman, M. Li, E. Hennes, R. Cornelissen, B. J. Hensen, A. Bertolini, M. P. Allan
-  link:
-    url: https://arxiv.org/abs/2509.09010
-    display: arXiv (2025)
-  highlight: 1
-
-- title: "Observation of flat bands in twisted bilayer graphene"
-  image: TBG_ARPES.png
-  description: A first paper from the TBG collaboration is online, with beautiful data from the Baumberger group in Geneva, and great devices from the Efetov group at ICFO. We measured STM on the device.
-  authors: S Lisi*, X Lu*, T Benschop*, TA de Jong*, Petr S, JR Duran, F Margot, I Cucchi, E Cappelli, A Hunter, A Tamai, V Kandyba, A Giampietri, A Barinov, J Jobst, V Stalman, M Leeuwenhoek, K Watanabe, T Taniguchi, L Rademaker, SJ van der Molen, MP Allan, DK Efetov, F Baumberger
-  link:
-    url: https://www.nature.com/articles/s41567-020-01041-x
-    display:  Nature Physics 17, 198 (2020)
-  highlight: 1
-  news2: News coverage by <a href="https://www.nrc.nl/nieuws/2020/09/28/slome-elektronen-maken-grafeen-supergeleidend-a4013840"> NRC </a>
