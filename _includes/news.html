@@ -4,11 +4,11 @@
 
   {% for article in site.data.news limit:9 %}
   <div style="margin-bottom: 18px;">
-    <span style="font-size: 13px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px;">
+    <span style="font-size: 15px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px;">
       {{ article.date }}
     </span><br>
     
-    <span style="font-weight: 500; display: block; margin-top: 2px;">
+    <span style="font-size: 17px; font-weight: 500; display: block; margin-top: 2px;">
       {{ article.headline | markdownify | remove: '<p>' | remove: '</p>' }}
     </span>
   </div>
