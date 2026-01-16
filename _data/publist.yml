@@ -5,7 +5,7 @@
   link:
     url:
     display: IEEE Transactions on Robotics (Pending)
-  highlight: 0
+  highlight: 1
 
 - title: "Prediction of performance and noise of a small quadrotor using CHARM"
   image: endurance_OASPL_directivity.png
