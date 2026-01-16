@@ -9,10 +9,12 @@ permalink: /
 <div class="clearfix" markdown="0">
     <img src="{{ site.url }}{{ site.baseurl }}/images/headshot.JPG" style="float: left; border-radius: 15%; margin-bottom: 20px; margin-right: 25px; max-width: 180px;">
   <p>
-  I am an aerodynamics and aeroacoustics specialist focusing on the noise created by the complex fluid interactions of multirotor vehicles.
-  I leverage multi-fidelity computational approaches with applications varying from the rapid generation of large datasets using analytical methods to high-fidelity CFD investigations of propeller physics.
-  My expertise includes hybrid RANS/LES turbulence modeling and transitional Reynolds number flows, supported by experience in code optimization and parallelization for high-performance computing environments.
-  My other contributions include developing automated workflows applying design of experiments to train physics-informed machine learning surrogate models to predict the performance of arbitrary propeller geometries and optimize quadrotor control algorithms.
-  Currently, I am developing an analytical model for Turbulence Ingestion Noise which is a dominant noise source for next generation multirotor systems such as Advanced Air Mobility.
+  I am an <strong>aerodynamics and aeroacoustics specialist</strong> focusing on the noise created by the complex fluid interactions of multirotor vehicles.
+  I leverage <strong>multi-fidelity computational approaches</strong> with applications varying from the rapid generation of large datasets using analytical methods to high-fidelity CFD investigations of propeller physics.
+      
+  My expertise includes <strong>hybrid RANS/LES</strong> turbulence modeling and transitional Reynolds number flows, supported by experience in code optimization and parallelization for <strong>high-performance computing</strong> environments.
+  My other contributions include developing automated workflows applying design of experiments to train <strong>physics-informed machine learning</strong> surrogate models to predict the performance of arbitrary propeller geometries and optimize quadrotor control algorithms.
+  
+  Currently, I am developing an analytical model for <strong>Turbulence Ingestion Noise</strong> which is a dominant noise source for next generation multirotor systems such as <strong>Advanced Air Mobility</strong>.
   </p>
 </div>
