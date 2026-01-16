@@ -1,14 +1,20 @@
 
 <div class="well">
-<h4>News</h4>
+  <h4 style="margin-top: 0; margin-bottom: 15px;">News</h4>
 
-{% for article in site.data.news limit:9 %}
-  <div style="margin-bottom: 15px;">
-    <small>{{ article.date }}</small><br>
-    {{ article.headline | markdownify | remove: '<p>' | remove: '</p>' }}
+  {% for article in site.data.news limit:9 %}
+  <div style="margin-bottom: 18px;">
+    <span style="font-size: 13px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px;">
+      {{ article.date }}
+    </span><br>
+    
+    <span style="font-weight: 500; display: block; margin-top: 2px;">
+      {{ article.headline | markdownify | remove: '<p>' | remove: '</p>' }}
+    </span>
   </div>
   {% endfor %}
 
-<h4><a href="{{ site.url }}{{ site.baseurl }}/allnews.html">... see all News</a></h4>
-
-    </div>
+  <h5 style="margin-top: 20px;">
+    <a href="{{ site.url }}{{ site.baseurl }}/allnews.html" style="text-decoration: none;">... see all News</a>
+  </h5>
+</div>
