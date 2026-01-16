@@ -17,7 +17,7 @@
   highlight: 1
 
 - title: "Evaluation of Urban-Flow-Informed Gusts on eVTOL Vertiport Approach Acoustics"
-  image:: palm_disturbance_spectrogram.png
+  image: palm_disturbance_spectrogram.png
   description: Investigating how turbulent urban wind environments and gusts impact the noise levels of eVTOL aircraft during the critical approach phase to vertiports.
   authors: A. Rozman, S. Grace
   link:
@@ -39,7 +39,7 @@
   description: An evaluation of the permeable surface method in CFD for capturing complex aeroacoustic interactions between wings and propellers in distributed electric propulsion systems.
   authors: A. Rozman, Z. H. Jia, S. A. Tran, S. Grace
   link:
-    url: #
+    url: https://www.bu.edu/ufmal/files/2024/03/Adam_TVF_2024.pdf
     display: VFS Aeromechanics Specialists' Conf (2024)
   highlight: 1
 
