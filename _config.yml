@@ -19,9 +19,17 @@ include:
 
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 sass:
   sass_dir: _sass
+
+# Seo
+logo: "/images/headshot.JPG" 
+social:
+  name: Adam Rozman
+  links:
+    - https://adrozman.github.io
 
 # Conversion
 markdown: kramdown
