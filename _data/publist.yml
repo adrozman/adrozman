@@ -3,7 +3,7 @@
   description: A novel gradient-enhanced Gaussian process approach to improve the accuracy and speed of quadrotor flight dynamics modeling, enabling high-fidelity real-time simulations.
   authors: L. Sang, A. Rozman, S. Grace, R. Tron
   link:
-    url:
+    # url:
     display: IEEE Transactions on Robotics (Pending)
   highlight: 1
 
@@ -52,7 +52,7 @@
     display: Honors Undergraduate Thesis (2022)
   highlight: 1
 
-    - title: A minimally invasive, micromilled, microneedle flexible patch array (μNFPA) for transdermal hydration sensing"
+- title: A minimally invasive, micromilled, microneedle flexible patch array (μNFPA) for transdermal hydration sensing"
   description: A novel two step makerspace-based microfabrication strategy for the realization of high-throughput (HT), self-insulated 3D Microelectrode Arrays (MEAs) using micro-stereolithography (μSLA) based 3D printing technology.
   authors: A. Kundu, S. Langevin,  A. Rozman, and S. Rajaraman
   link:
@@ -60,7 +60,7 @@
     display: Journal of Micromechanics and Microengineering (2021)
   highlight: 0
 
-  - title: "Development of a 3D Printed, Self-Insulated, High-Throughput 3D Microelectrode Array (HT-3DMEA)"
+- title: "Development of a 3D Printed, Self-Insulated, High-Throughput 3D Microelectrode Array (HT-3DMEA)"
   description: A novel two step makerspace-based microfabrication strategy for the realization of high-throughput (HT), self-insulated 3D Microelectrode Arrays (MEAs) using micro-stereolithography (μSLA) based 3D printing technology.
   authors: A. Kundu, A. Rozman, and S. Rajaraman
   link:
