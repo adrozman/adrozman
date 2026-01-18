@@ -1,7 +1,7 @@
 ---
-title: "Adam Rozman - Publications"
+title: "Publications"
 layout: gridlay
-excerpt: "Adam Rozman -- Publications."
+excerpt: "Adam Rozman Publications PhD Candidate."
 sitemap: false
 permalink: /publications/
 ---
