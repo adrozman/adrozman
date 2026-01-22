@@ -38,12 +38,12 @@ Using a subscale Joby Aviation propeller as a benchmark, this work evaluates the
 * **Urban Gust Impacts**: I modeled the effects of urban-informed gusts on a vertiport approach trajectory. My findings show an average increase of ~2.3 dB in overall sound pressure levels during gust encounters.
 * **Computational Efficiency**: Demonstrated that actuator line models can provide acoustic predictions at an order of magnitude lower cost, enabling long-duration transient noise analysis that would be prohibitive with blade-resolved CFD.
 
-<class="clearfix" markdown="0" div style="text-align: center; margin: 20px 0;">
+<div class="clearfix" markdown="0" div style="text-align: center; margin: 20px 0;">
     <img src="{{ site.url }}{{ site.baseurl }}/images/joby_qcrit.png" alt="Propeller Wake Visualizations" style="max-width: 80%; border-radius: 8px;">
     <p><em>Figure 3: Simulated approach trajectory into a vertiport, incorporating urban-flow-informed gusts.</em></p>
 </div>
 
-<class="clearfix" markdown="0" div style="text-align: center; margin: 20px 0;">
+<div class="clearfix" markdown="0" div style="text-align: center; margin: 20px 0;">
     <img src="{{ site.url }}{{ site.baseurl }}/images/palm_disturbance_spectrogram.png" alt="Spectrogram with disturbance" style="max-width: 80%; border-radius: 8px;">
     <p><em>Figure 4: Comparison of steady-state wake vs. wake structure under PALM-generated atmospheric disturbances.</em></p>
 </div>
