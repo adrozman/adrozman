@@ -18,7 +18,7 @@ My research focuses on the intersection of computational fluid dynamics (CFD) an
 This research evaluates the interaction between a pusher-propeller and a wing, focusing on how wing-wake inflow distortions increase noise levels. This is a common configuration in many multirotor and eVTOL designs.
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="/assets/images/aart-animation.gif" alt="AART Q Criterion" style="max-width: 80%; border-radius: 8px;">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/aart-animation.gif" alt="AART Q Criterion" style="max-width: 80%; border-radius: 8px;">
     <p><em>Figure 1: Computational geometry of the AART wing-propeller setup used for interaction noise studies.</em></p>
 </div>
 
@@ -26,7 +26,7 @@ This research evaluates the interaction between a pusher-propeller and a wing, f
 * **Turbulence Modeling**: Investigated the impact of laminar-to-turbulent transition models, finding that fully turbulent models better captured the wing wake deficit essential for accurate noise prediction.
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="/assets/images/aart_mic10.png" alt="Permeable FW-H Results" style="max-width: 80%; border-radius: 8px;">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/aart_mic10.png" alt="Permeable FW-H Results" style="max-width: 80%; border-radius: 8px;">
     <p><em>Figure 2: Far-field acoustic results comparison between FW-H methods and experiment.</em></p>
 </div>
 
@@ -39,12 +39,12 @@ Using a subscale Joby Aviation propeller as a benchmark, this work evaluates the
 * **Computational Efficiency**: Demonstrated that actuator line models can provide acoustic predictions at an order of magnitude lower cost, enabling long-duration transient noise analysis that would be prohibitive with blade-resolved CFD.
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="/assets/images/joby_qcrit.png" alt="Propeller Wake Visualizations" style="max-width: 80%; border-radius: 8px;">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/joby_qcrit.png" alt="Propeller Wake Visualizations" style="max-width: 80%; border-radius: 8px;">
     <p><em>Figure 3: Simulated approach trajectory into a vertiport, incorporating urban-flow-informed gusts.</em></p>
 </div>
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="/assets/images/palm_disturbance_spectrogram.png" alt="Spectrogram with disturbance" style="max-width: 80%; border-radius: 8px;">
+    <img src="{{ site.url }}{{ site.baseurl }}/images/palm_disturbance_spectrogram.png" alt="Spectrogram with disturbance" style="max-width: 80%; border-radius: 8px;">
     <p><em>Figure 4: Comparison of steady-state wake vs. wake structure under PALM-generated atmospheric disturbances.</em></p>
 </div>
 
