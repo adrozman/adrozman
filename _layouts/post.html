@@ -1,15 +1,62 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+<link rel="stylesheet" href="{{ '/css/github-markdown.css' | relative_url }}">
+
+<article class="post markdown-body" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%b %-d, %Y" }}
+      </time>
+    </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
-
 </article>
+
+<style>
+  .markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+  }
+  @media (max-width: 767px) {
+    .markdown-body { padding: 15px; }
+  }
+
+  .output-box {
+    background-color: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-left: 4px solid #586069;
+    color: #24292e;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    font-family: monospace;
+    font-size: 0.85em;
+    display: block;
+  }
+  
+  /* 2. The "Output:" Label */
+  .output-box::before {
+      content: "Output: ";
+      font-weight: bold;
+      color: #6a737d;
+      margin-right: 8px;
+      user-select: none;
+  }
+
+  .post-content img {
+    display: block;       /* Forces image to sit on its own line */
+    margin-left: auto;    /* Pushes equally from the left */
+    margin-right: auto;   /* Pushes equally from the right */
+    max-width: 100%;      /* Prevents large images from overflowing */
+  }
+
+</style>

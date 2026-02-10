@@ -6,8 +6,6 @@ sitemap: false
 permalink: /research/
 ---
 
-# Research
-
 # Research Overview
 
 My research focuses on the intersection of computational fluid dynamics (CFD) and aeroacoustics, specifically aimed at reducing the noise footprint of next-generation aerial vehicles. As drones and electric Vertical Take-Off and Landing (eVTOL) aircraft become more prevalent in urban environments, understanding and predicting their complex noise signatures is critical for public acceptance and regulatory compliance.
