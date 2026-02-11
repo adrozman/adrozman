@@ -1,6 +1,6 @@
 ---
 title: Blog
-layout: post
+layout: textlay
 permalink: /blog/
 ---
 
