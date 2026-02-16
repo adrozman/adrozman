@@ -4,6 +4,8 @@ layout: post
 permalink: /blog/
 ---
 
+<p>Click link to view an article.</p>
+
 <ul>
   {% for post in site.posts %}
     <li>
