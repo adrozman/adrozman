@@ -3,6 +3,7 @@ layout: post
 title: "Digital Signal Analysis using FFT"
 date: 2026-02-10
 description: "The basics of digital signal processing. You will learn FFT algorithm theory and how to extract frequencies and amplitudes from a signal using the numpy fft module. Windowing for spectral leakage mitigation using a Hanning window is presented."
+author: Adam Rozman
 ---
 
 I will walk through the fundamentals of signal frequency analysis, explaining the *Fast Fourier Transform (FFT)* and working through examples in Python. The theory will be applied by constructing some signals and extracting their component frequencies using FFT. Finally, we'll discuss the issue of *spectral leakage* and mitigation strategies. Open this Jupyter notebook in Colab to follow along and modify, or save for future use:
@@ -355,3 +356,4 @@ plt.show()
 
 
 We have improved the accuracy of the predicted peaks of our discontinuous/aperiodic signal using windowing. However, there is still error from the true values. Obtaining more samples, creating a longer signal, also reduces leakage.
+
