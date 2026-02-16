@@ -5,7 +5,8 @@
   <meta property="og:site_name" content="Adam Rozman" />
   <link rel="shortcut icon" type="image/jpeg" href="{{ '/images/joby_qcrit.png' | relative_url }}">
   
-  {% seo %}
+  {% seo title=false %}
+  <title>{% if page.title == "Home" %}{{ site.title }}{% else %}{{ site.title }} | {{ page.title }}{% endif %}</title>
   
   <link rel="stylesheet" href="{{ "/css/main.css" | relative_url }}">
 
