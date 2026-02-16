@@ -4,7 +4,7 @@ layout: post
 permalink: /blog/
 ---
 
-<p>Click link to view an article.</p>
+<p>Click a link below to view the article.</p>
 
 <ul>
   {% for post in site.posts %}
