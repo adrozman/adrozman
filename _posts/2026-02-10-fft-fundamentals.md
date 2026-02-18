@@ -2,7 +2,7 @@
 layout: post
 title: "FFT Fundamentals: Digital Signal Analysis using Python"
 date: 2026-02-10
-description: "The basics of digital signal processing using FFT in Python. Learn how to use the numpy fft module and mitigate spectral leakage using windowing."
+description: "The basics of digital signal processing using the Fast Fourier Transform in Python. Learn how to use the numpy FFT module and mitigate spectral leakage using windowing."
 author: Adam Rozman
 permalink: /blog/fft-fundamentals-python/
 ---
@@ -357,5 +357,6 @@ plt.show()
 
 
 We have improved the accuracy of the predicted peaks of our discontinuous/aperiodic signal using windowing. However, there is still error from the true values. Obtaining more samples, creating a longer signal, also reduces leakage.
+
 
 
