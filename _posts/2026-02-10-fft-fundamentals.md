@@ -2,7 +2,7 @@
 layout: post
 title: "FFT Signal Analysis using Python"
 date: 2026-02-10
-description: "The basics of digital signal processing using the Fast Fourier Transform in Python. Learn how to use the numpy FFT module and mitigate spectral leakage using windowing."
+description: "Fourier Transform (FFT) signal processing in Python. Learn how to use the numpy FFT module and mitigate spectral leakage using windowing."
 author: Adam Rozman
 permalink: /blog/fft-fundamentals-python/
 redirect_from:
@@ -60,7 +60,7 @@ plt.show()
 
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_4_0.png)
+![Sine wave f=5 Hz, A = 3](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_4_0.png)
     
 
 
@@ -99,7 +99,7 @@ plt.show()
 
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_7_0.png)
+![Complex signal from 3 different frequency and amplitude waves](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_7_0.png)
     
 
 
@@ -152,7 +152,7 @@ plt.show()
 
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_11_0.png)
+![Raw FFT output from Numpy fft.fft](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_11_0.png)
     
 
 
@@ -195,7 +195,7 @@ plt.show()
 </details>
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_14_0.png)
+![One-sided FFT final result with correct amplitudes](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_14_0.png)
     
 
 
@@ -242,7 +242,7 @@ plt.show()
 
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_18_0.png)
+![Discontinuous or aperiodic signal that will cause spectral leakage](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_18_0.png)
     
 
 
@@ -273,7 +273,7 @@ plt.show()
 
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_20_0.png)
+![FFT of the aperiodic signal with spectral leakage](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_20_0.png)
     
 
 
@@ -309,7 +309,7 @@ plt.show()
 
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_22_0.png)
+![Hanning window applied to the aperiodic signal](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_22_0.png)
     
 
 
@@ -354,11 +354,12 @@ plt.show()
 
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_26_0.png)
+![FFT with reduced spectral leakage from windowing](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_26_0.png)
     
 
 
 We have improved the accuracy of the predicted peaks of our discontinuous/aperiodic signal using windowing. However, there is still error from the true values. Obtaining more samples, creating a longer signal, also reduces leakage.
+
 
 
 
