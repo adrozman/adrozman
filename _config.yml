@@ -21,6 +21,7 @@ include:
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 sass:
   sass_dir: _sass
