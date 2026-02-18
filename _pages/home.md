@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Adam Rozman"
 layout: homelay
 excerpt: "Adam Rozman | PhD Candidate at Boston University | Specialist in Aerodynamics, Aeroacoustics, and Multirotor Noise."
 sitemap: true
