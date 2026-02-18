@@ -45,12 +45,3 @@ Using a subscale Joby Aviation propeller as a benchmark, this work evaluates the
     <img src="{{ site.url }}{{ site.baseurl }}/images/palm_disturbance_spectrogram.png" alt="Spectrogram with disturbance" style="max-width: 80%; border-radius: 8px;">
     <p><em>Figure 4: Comparison of steady-state wake vs. wake structure under PALM-generated atmospheric disturbances.</em></p>
 </div>
-
----
-
-## Tools and Solvers
-In my research, I utilize several high-performance computing (HPC) tools:
-* **CREATE™-AV Helios & OVERFLOW**: High-fidelity CFD solvers.
-* **PSU-WOPWOP**: Acoustic propagation using the FW-H analogy.
-* **ROAM/CHARM**: Mid-fidelity aerodynamic modeling.
-* **Python**: Data processing and signal analysis.
