@@ -60,7 +60,7 @@ plt.show()
 
 
     
-![png](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_4_0.png)
+![Sine wave with frequency of 5 Hertz and amplitude of 3](/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_4_0.png)
     
 
 
@@ -359,6 +359,7 @@ plt.show()
 
 
 We have improved the accuracy of the predicted peaks of our discontinuous/aperiodic signal using windowing. However, there is still error from the true values. Obtaining more samples, creating a longer signal, also reduces leakage.
+
 
 
 
