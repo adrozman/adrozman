@@ -48,7 +48,8 @@ logo: "/images/headshot.JPG"
 social:
   name: Adam Rozman
   links:
-    - https://adrozman.github.io
+    - https://github.com/adrozman
+    - https://www.linkedin.com/in/arozman/
 
 # Conversion
 markdown: kramdown
