@@ -52,11 +52,17 @@ layout: default
       user-select: none;
   }
 
-  .post-content img {
+  .post-content img,
+  .post-content svg {
     display: block;       /* Forces image to sit on its own line */
     margin-left: auto;    /* Pushes equally from the left */
     margin-right: auto;   /* Pushes equally from the right */
     max-width: 100%;      /* Prevents large images from overflowing */
+  }
+
+  .post-content img.inline-image {
+    display: inline-block;
+    margin: 0;
   }
 
 </style>
