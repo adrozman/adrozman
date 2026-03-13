@@ -7,6 +7,7 @@ author: Adam Rozman
 permalink: /blog/fft-fundamentals-python/
 redirect_from:
   - /2026/02/10/fft-fundamentals.html
+thumbnail: "/images/posts/FFT_Fundamentals_files/FFT_Fundamentals_22_0.png"
 ---
 
 I will walk through the fundamentals of signal frequency analysis, explaining the *Fast Fourier Transform (FFT)* and working through examples in Python. The theory will be applied by constructing some signals and extracting their component frequencies using FFT. Finally, we'll discuss the issue of *spectral leakage* and mitigation strategies. Open this Jupyter notebook in Colab to follow along and modify, or save for future use:

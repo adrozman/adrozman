@@ -5,6 +5,7 @@ date: 2026-03-12
 description: "Using CadQuery Python library to parametrically design a cong vase to 3D print for your desk."
 author: Adam Rozman
 permalink: /blog/cong-vase/
+thumbnail: "/images/posts/Cong_Vase_files/cong_vase_static_16_1.svg"
 ---
 
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
