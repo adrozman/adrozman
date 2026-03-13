@@ -76,7 +76,7 @@ object1 = (
 
 
 ### Creating the Cuts
-Now I am going to create the "C"-shaped inserts into the corner of this geometry on the -X and -Y faces. Each "C" insert is made of two horizontal box cuts $w_{insert}$ wide and $t_{insert}$ tall, and one vertical box cut $t_{insert}$ wide and $3*t_{insert}$ tall. The horizontal cuts are spaced every $2*t_{insert}$ and the vertical cuts are defined every $4*t_{insert}$. It is easiest to make the pattern of all rectangle locations and perform one cut for each face.
+Now I am going to create the "C"-shaped inserts into the corner of this geometry on the -X and -Y faces. Each "C" insert is made of two horizontal box cuts $w_{insert}$ wide and $t_{insert}$ tall, and one vertical box cut $t_{insert}$ wide and $3 t_{insert}$ tall. The horizontal cuts are spaced every $2 t_{insert}$ and the vertical cuts are defined every $4 t_{insert}$. It is easiest to make the pattern of all rectangle locations and perform one cut for each face.
 
 When you begin drawing on faces in CadQuery, a local origin and coordinate system is placed at the face center. On the -X face, the local +X is toward the edge, but on the -Y face, the local +X is away from the edge. Thus, the X coordinates of the boxes differ for the two faces.
 
