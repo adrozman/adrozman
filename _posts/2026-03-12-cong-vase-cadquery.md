@@ -13,7 +13,7 @@ This post describes creating a cong vase using the CadQuery Python library for C
 
 ## Introduction
 
-The cong vase has been my favorite shape of pottery since I saw one in a museum. The cuts into the rectangular exterior create symmetrical facets that I find very visually satisfying. This style originated in China during the Neolithic era with the first cong vessels carved out of Jade. The earliest ceramic vases using this style were made about 1000 years old during the Song dynasty.
+The cong vase has been my favorite shape of pottery since I saw one in a museum. The cuts into the rectangular exterior create symmetrical facets that I find very visually satisfying. This style originated in China during the Neolithic era with the first cong vessels carved out of Jade. The earliest ceramic vases using this style were made about 1000 years ago during the Song dynasty.
 
 The cong vessel formula only requires a rectangular box exterior with uniformly spaced cuts and a cylindrical mouth and base. Different aspect ratios are allowed, creating many fun possible variations. 
 
