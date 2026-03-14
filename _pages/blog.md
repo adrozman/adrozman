@@ -13,12 +13,12 @@ permalink: /blog/
     <li style="display: flex; align-items: center;">
       
       {% if post.thumbnail %}
-        <a href="{{ post.url | relative_url }}" style="width: 300px; flex-shrink: 0; display: flex; justify-content: center;">
-          <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" style="height: 200px; width:auto;">
+        <a href="{{ post.url | relative_url }}" style="width: clamp(120px, 30vw, 300px); flex-shrink: 0; display: flex; justify-content: center;">
+          <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" style="width: 100%; max-height: 250px; object-fit: contain">
         </a>
       {% endif %}
 
-      <div>
+      <div style="flex-grow: 1;">
         <a href="{{ post.url | relative_url }}" style="font-size: 2rem; font-weight: bold;">{{ post.title }}</a>
         - <span style="font-size: 2.0rem;">{{ post.date | date: "%B %d, %Y" }}</span>
         <div class="post-meta-description" style="font-size: 1.8rem;">
