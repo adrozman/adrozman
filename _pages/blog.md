@@ -2,6 +2,7 @@
 title: Blog
 layout: default
 permalink: /blog/
+sitemp: true
 ---
 
 <h1 style="margin-bottom: 20px;">{{ page.title }}</h1>

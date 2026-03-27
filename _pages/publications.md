@@ -2,12 +2,13 @@
 title: "Publications"
 layout: gridlay
 excerpt: "Adam Rozman Publications PhD Candidate."
-sitemap: false
+sitemap: true
 permalink: /publications/
 ---
 
 
 # Publication Highlights
+Click a tile below to view the PDF or a page with more information.
 
 {% assign number_printed = 0 %}
 {% for publi in site.data.publist %}
@@ -20,12 +21,31 @@ permalink: /publications/
 {% endif %}
 
 <div class="col-sm-6 clearfix">
- <div class="well" style="border-radius: 0;">
+
+  {% if publi.click_redirect_page %}
+    {% assign target_url = publi.click_redirect_page | relative_url %}
+  {% else %}
+    {% assign target_url = publi.link.url %}
+  {% endif %}
+
+
+ <div class="well" style="border-radius: 0; cursor: pointer;" onclick="window.location.href='{{ target_url }}';">
   <pubtit>{{ publi.title }}</pubtit>
   <img src="{{ site.url }}{{ site.baseurl }}/images/{{ publi.image }}" class="img-responsive" width="50%" style="float: left" />
   <p>{{ publi.description }}</p>
   <p><em>{{ publi.authors }}</em></p>
-  <p><strong><a href="{{ publi.link.url }}">{{ publi.link.display }}</a></strong></p>
+
+  <p><strong>
+    <a href="{{ publi.link.url }}" onclick="event.stopPropagation();">
+    {% if publi.click_redirect_page %}
+      {{publi.link.display }}
+    {% else %}
+      {{ publi.link.display }}
+    {% endif %}
+    </a>
+  </strong></p>
+
+
   <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
   <p> {{ publi.news2 }}</p>
  </div>

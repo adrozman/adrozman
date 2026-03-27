@@ -2,7 +2,7 @@
 title: "Research"
 layout: textlay
 excerpt: "Adam Rozman Research PhD Candidate"
-sitemap: false
+sitemap: true
 permalink: /research/
 ---
 
