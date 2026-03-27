@@ -28,6 +28,12 @@ layout: default
     {{ content }}
   </div>
 
+  <br>
+  <hr>
+  {% if page.comments != false %}
+    {% include giscus.html %}
+  {% endif %}
+
 </div>
 
 <style>
