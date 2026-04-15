@@ -29,7 +29,8 @@ Click a tile below to view the PDF or a page with more information.
   {% endif %}
 
 
- <div class="well" style="border-radius: 0; cursor: pointer;" onclick="window.location.href='{{ target_url }}';">
+<!-- <div class="well" style="border-radius: 0; cursor: pointer;" onclick="window.location.href='{{ target_url }}';"> -->
+  <div class="well pub-tile" style="border-radius: 0; cursor: pointer;" onclick="window.location.href='{{ target_url }}';">
   <pubtit>{{ publi.title }}</pubtit>
   <img src="{{ site.url }}{{ site.baseurl }}/images/{{ publi.image }}" class="img-responsive" width="50%" style="float: left" />
   <p>{{ publi.description }}</p>

@@ -37,6 +37,21 @@ pubtit {
 	font-weight: bold;
 }
 
+/* --- Publication Tile Hover Effect --- */
+.pub-tile {
+  /* This adds a quick, smooth fade-in for the outline rather than a harsh snap */
+  transition: outline 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover, &:focus {
+    /* The outline itself. Change the hex code to match your site's theme */
+    outline: 2px solid #0056b3;
+    outline-offset: -2px; /* Keeps the outline inside the edge of the tile */
+
+    /* OPTIONAL: Since you use box-shadows on your grid images, you might like this instead or in addition:
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); */
+  }
+}
+
 firstp {
 }
 
@@ -58,6 +73,58 @@ firstp {
 #newsid img {
 	margin-top: 6px;
 	margin-bottom: 6px;
+}
+
+/* --- News Section --- */
+#newsid {
+  .news-header {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .news-item {
+    margin-bottom: 18px;
+  }
+
+  .news-date {
+    font-size: 15px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .news-headline {
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .news-footer {
+    margin-top: 20px;
+
+    a {
+      text-decoration: none;
+
+      &:hover, &:focus {
+      text-decoration: underline; /* Adds the underline when hovered or clicked */
+      }
+    } 
+    
+  }
+
+  /* This targets ALL links in the news section, including markdown-generated ones */
+  a {
+    color: #0056b3; /* Your custom link color */
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover, &:focus {
+      color: #003d82; /* Hover state */
+      text-decoration: underline;
+    }
+  }
 }
 
 /* Team & Publications */
