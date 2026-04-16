@@ -37,18 +37,27 @@ pubtit {
 	font-weight: bold;
 }
 
-/* --- Publication Tile Hover Effect --- */
+/* --- Publication Tile Styling & Hover Effect --- */
 .pub-tile {
-  /* This adds a quick, smooth fade-in for the outline rather than a harsh snap */
-  transition: outline 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 0;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover, &:focus {
-    /* The outline itself. Change the hex code to match your site's theme */
-    outline: 2px solid #0056b3;
-    outline-offset: -2px; /* Keeps the outline inside the edge of the tile */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 
-    /* OPTIONAL: Since you use box-shadows on your grid images, you might like this instead or in addition:
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); */
+    pubtit {
+      text-decoration: underline;
+    }
+  }
+
+  /* Moved image styling from inline HTML to clean it up */
+  .pub-tile-img {
+    float: left;
+    width: 50%;
+    margin-right: 15px; /* Adds breathing room between the image and text */
+    margin-bottom: 10px;
   }
 }
 
@@ -156,4 +165,56 @@ firstp {
     margin-top: 20px;
     margin-left: 30px;
     margin-right: 30px;
+}
+
+/* Blog Post Card Styles */
+.blog-post-card {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.blog-post-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.blog-post-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+/* Optional: Move the inline styles for the thumbnail wrapper here too */
+.blog-post-thumbnail-wrapper {
+  width: clamp(120px, 30vw, 300px);
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* Optional: Move the inline styles for the image here */
+.blog-post-thumbnail {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+/* 1. Stop the entire card from underlining on hover */
+a.blog-post-card:hover,
+a.blog-post-card:focus {
+  text-decoration: none;
+}
+
+/* 2. Apply the underline ONLY to the title when the card is hovered */
+a.blog-post-card:hover .blog-post-title,
+a.blog-post-card:focus .blog-post-title {
+  text-decoration: underline;
 }
