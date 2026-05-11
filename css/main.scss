@@ -1,220 +1,332 @@
 ---
 ---
-    
+
 @import "bootstrap";
 
-img { margin-bottom: 24px; 
-     margin-top: 17px; 
-    border-radius:2%;
+/* --------------------------------------------------------------------------
+   Modern Vibe-Coded Design System
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Brand Colors */
+  --primary-color: #148F77;
+  --primary-dark: #0E6655;
+  --primary-light: #A3E4D7;
+  --primary-text: #D1F2EB;
+  
+  /* Text & Backgrounds */
+  --text-main: #2C3E50;
+  --text-muted: #7F8C8D;
+  --bg-main: #F8F9FA;
+  --bg-card: #FFFFFF;
+  
+  /* Utilities */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.1);
+  --shadow-hover: 0 16px 32px rgba(20, 143, 119, 0.15);
+  
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-
+/* Base Styling */
 body {
-	padding-top: 70px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-top: 80px;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: #1A252F;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+
+/* Header & Navbar */
+.navbar-default {
+  background: rgba(20, 143, 119, 0.95) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none !important;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.navbar-default .navbar-brand {
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: var(--primary-text) !important;
+  text-shadow: none !important;
+  transition: var(--transition);
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 1.75rem !important;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255,255,255,0.4) !important;
+  transform: translateY(-1px);
+}
+
+.navbar-default .navbar-toggle {
+  border-color: var(--primary-light) !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: var(--primary-light) !important;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: var(--primary-dark) !important;
+}
+
+/* Footer */
+#footer .panel-footer {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-dark) !important;
+  color: #ffffff !important;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+#footer .panel-footer a {
+  color: var(--primary-text) !important;
+  transition: var(--transition);
+}
+
+#footer .panel-footer a:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+/* Images */
+img {
+  margin-bottom: 24px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
 }
 
 figcaption {
-    text-align: right;
-    margin-top: -20px;
-    margin-bottom: 20px;
+  text-align: right;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
-
-
-/* Top navigation bar */
-
-
-p.byline {
-	text-align: center;
-	font-size: 18px;
-	line-height: 36px;
-	margin-top: -24px;
-	margin-bottom: 48px;
+/* Layout Containers */
+.container-fluid {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-
-pubtit {
-	font-weight: bold;
-}
-
-/* --- Publication Tile Styling & Hover Effect --- */
-.pub-tile {
-  border-radius: 0;
-  cursor: pointer;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-
-  &:hover, &:focus {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-
-    pubtit {
-      text-decoration: underline;
+/* Custom Overrides for #homeid, #newsid, etc. */
+#homeid {
+  img {
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-lg);
+    border: 4px solid white;
+    
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-hover);
     }
   }
-
-  /* Moved image styling from inline HTML to clean it up */
-  .pub-tile-img {
-    float: left;
-    width: 50%;
-    margin-right: 15px; /* Adds breathing room between the image and text */
-    margin-bottom: 10px;
-  }
 }
 
-firstp {
-}
-
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1000px; /* or 950px */
-}
-
-/* Home, News */
-#newsid p {
-	text-align: left;
-}
-
-#homeidtmp h1 {
-	text-align: center;
-}
-
-#newsid img {
-	margin-top: 6px;
-	margin-bottom: 6px;
-}
-
-/* --- News Section --- */
+/* News Section */
 #newsid {
-  .news-header {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.03);
+  
+  h2 {
+    font-size: 2rem;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 10px;
+    color: var(--primary-dark);
   }
-
+  
   .news-item {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+    
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
   }
-
+  
   .news-date {
-    font-size: 15px;
+    font-size: 1.35rem;
     font-weight: 700;
-    color: #888;
+    color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-
+  
   .news-headline {
-    font-size: 15px;
+    font-size: 1.6rem;
     font-weight: 500;
     display: block;
-    margin-top: 2px;
+    margin-top: 5px;
+    color: var(--text-main);
   }
-
-  .news-footer {
-    margin-top: 20px;
-
-    a {
-      text-decoration: none;
-
-      &:hover, &:focus {
-      text-decoration: underline; /* Adds the underline when hovered or clicked */
-      }
-    } 
-    
-  }
-
-  /* This targets ALL links in the news section, including markdown-generated ones */
+  
   a {
-    color: #0056b3; /* Your custom link color */
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
-
+    transition: var(--transition);
+    
     &:hover, &:focus {
-      color: #003d82; /* Hover state */
+      color: var(--primary-dark);
       text-decoration: underline;
     }
   }
 }
 
-/* Team & Publications */
-#gridid img { margin: 16px 22px 6px 0; border-radius:10%; box-shadow: 2px 2px 5px #888888 }
-#homeid img { margin: 0 0 0 0; border-radius:5%; box-shadow: 0px 0px 0px #888888 }
-#picid img { margin: 6px 3px 60px 6px; border-radius:1%; box-shadow: 2px 2px 5px #888888 }
-#gridid .row { margin-bottom: 24px; }
+/* Publications */
+.pub-tile {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 25px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: var(--transition);
 
+  &:hover, &:focus {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
 
-/* Grid overrides */
-.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-5, .col-sm-6,
-.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
-	padding-left: 16px;
-	padding-right: 16px;
+    pubtit {
+      color: var(--primary-color);
+    }
+  }
+
+  .pub-tile-img {
+    float: left;
+    width: 35%;
+    max-width: 200px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+  }
 }
 
-/* Grid overrides */
-.col-sm-4 {
-	padding-left: 26px;
-	padding-right: 26px;
+pubtit {
+  font-weight: 700;
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 8px;
+  transition: var(--transition);
 }
 
-
-/* Carusel */
-
-.carousel {
-    border-radius: 3px 3px 3px 3px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
+p.byline {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-top: -10px;
+  margin-bottom: 40px;
 }
 
-/* Blog Post Card Styles */
+/* Blog Post Cards */
 .blog-post-card {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: inherit;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background: var(--bg-card);
+  border: 1px solid rgba(0,0,0,0.03);
+  border-radius: var(--radius-md);
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
 }
 
 .blog-post-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.blog-post-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #0056b3;
-}
-
-/* Optional: Move the inline styles for the thumbnail wrapper here too */
-.blog-post-thumbnail-wrapper {
-  width: clamp(120px, 30vw, 300px);
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  margin-right: 20px;
-}
-
-/* Optional: Move the inline styles for the image here */
-.blog-post-thumbnail {
-  width: 100%;
-  max-height: 250px;
-  object-fit: contain;
-}
-
-/* 1. Stop the entire card from underlining on hover */
-a.blog-post-card:hover,
-a.blog-post-card:focus {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
   text-decoration: none;
 }
 
-/* 2. Apply the underline ONLY to the title when the card is hovered */
+.blog-post-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
 a.blog-post-card:hover .blog-post-title,
 a.blog-post-card:focus .blog-post-title {
-  text-decoration: underline;
+  color: var(--primary-dark);
+}
+
+.blog-post-thumbnail-wrapper {
+  width: clamp(120px, 30vw, 250px);
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  margin-right: 25px;
+}
+
+.blog-post-thumbnail {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Grid & Utilities */
+#gridid img, #picid img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+.carousel {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin: 30px 0;
 }

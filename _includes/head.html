@@ -8,6 +8,9 @@
   {% seo title=false %}
   <title>{% if page.title == "Adam Rozman" %}Adam Rozman{% else %}{{ page.title }} | Adam Rozman{% endif %}</title>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ "/css/main.css" | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -26,45 +29,6 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
-<style>
-  /* --- HEADER & FOOTER BACKGROUND --- */
-  /* --- HEADER & FOOTER BACKGROUND --- */
-  #footer .panel-footer,
-  .navbar-default {
-      background-color: #148F77 !important; /* Put your chosen hex code here! */
-      border-color: #0E6655 !important;     /* Optional: Make this slightly darker than your main color */
-      color: #ffffff !important;
-  }
 
-  /* --- TEXT & LINK COLORS --- */
-  #footer .panel-footer a,
-  .navbar-default .navbar-brand,
-  .navbar-default .navbar-nav > li > a {
-      color: #D1F2EB !important;
-      text-shadow: none !important;
-  }
-
-  /* --- HOVER STATES --- */
-  #footer .panel-footer a:hover,
-  .navbar-default .navbar-brand:hover,
-  .navbar-default .navbar-nav > li > a:hover {
-      color: #ffffff !important;
-      /*text-decoration: none !important;
-      /* Adds a subtle glow to make the hover unmistakable */
-      text-shadow: 0 0 2px rgba(255,255,255,0.5) !important;
-  }
-
-  /* --- MOBILE MENU BUTTON --- */
-  .navbar-default .navbar-toggle {
-      border-color: #A3E4D7 !important;
-  }
-  .navbar-default .navbar-toggle .icon-bar {
-      background-color: #A3E4D7 !important;
-  }
-  .navbar-default .navbar-toggle:hover,
-  .navbar-default .navbar-toggle:focus {
-      background-color: #117864 !important;
-  }
-</style>
 
 </head>
