@@ -22,3 +22,28 @@
 	</div>
   </div>
 </div>
+
+<script>
+  let lastScrollTop = 0;
+  const navbar = document.querySelector('.navbar-fixed-top');
+  const delta = 5;
+  
+  window.addEventListener('scroll', () => {
+    let currentScroll = window.pageYOffset;
+    
+    if (Math.abs(lastScrollTop - currentScroll) <= delta) {
+      return;
+    }
+    
+    if (currentScroll > lastScrollTop && currentScroll > 60) {
+      // Scroll Down
+      navbar.classList.add('nav-up');
+    } else {
+      // Scroll Up
+      if (currentScroll + window.innerHeight < document.documentElement.scrollHeight) {
+        navbar.classList.remove('nav-up');
+      }
+    }
+    lastScrollTop = currentScroll;
+  });
+</script>

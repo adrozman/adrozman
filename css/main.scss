@@ -56,13 +56,17 @@ h1 {
 
 /* Header & Navbar */
 .navbar-default {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(20, 143, 119, 0.08) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: none !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   transition: var(--transition);
+}
+
+.navbar-default.nav-up {
+  transform: translateY(-100%);
 }
 
 .navbar-default .navbar-brand {
@@ -123,7 +127,7 @@ h1 {
 
 /* Footer */
 #footer .panel-footer {
-  background-color: var(--bg-main) !important;
+  background-color: rgba(20, 143, 119, 0.08) !important;
   border-color: transparent !important;
   border-top: 1px solid rgba(0,0,0,0.05) !important;
   color: var(--text-muted) !important;
