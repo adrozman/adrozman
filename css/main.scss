@@ -79,6 +79,23 @@ h1 {
 
 .navbar-default .navbar-nav > li > a {
   font-size: 1.75rem !important;
+  position: relative;
+}
+
+.navbar-default .navbar-nav > li > a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 10px;
+  left: 50%;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.navbar-default .navbar-nav > li > a:hover::after {
+  width: 70%;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -125,6 +142,11 @@ img {
   margin-bottom: 24px;
   border-radius: var(--radius-md);
   transition: var(--transition);
+}
+
+img:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 figcaption {
