@@ -56,28 +56,29 @@ h1 {
 
 /* Header & Navbar */
 .navbar-default {
-  background: rgba(20, 143, 119, 0.95) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: none !important;
-  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   transition: var(--transition);
 }
 
 .navbar-default .navbar-brand {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.75rem;
   letter-spacing: -0.01em;
-}
-
-.navbar-default .navbar-brand,
-.navbar-default .navbar-nav > li > a {
-  color: var(--primary-text) !important;
-  text-shadow: none !important;
+  background: linear-gradient(135deg, var(--primary-color), #2980B9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transition: var(--transition);
 }
 
 .navbar-default .navbar-nav > li > a {
+  color: var(--text-main) !important;
+  text-shadow: none !important;
+  transition: var(--transition);
   font-size: 1.75rem !important;
   position: relative;
 }
@@ -98,10 +99,12 @@ h1 {
   width: 70%;
 }
 
-.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:hover {
+  transform: translateY(-1px);
+}
+
 .navbar-default .navbar-nav > li > a:hover {
-  color: #ffffff !important;
-  text-shadow: 0 0 8px rgba(255,255,255,0.4) !important;
+  color: var(--primary-color) !important;
   transform: translateY(-1px);
 }
 
@@ -110,30 +113,31 @@ h1 {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: var(--primary-light) !important;
+  background-color: var(--primary-color) !important;
 }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: var(--primary-dark) !important;
+  background-color: var(--primary-light) !important;
 }
 
 /* Footer */
 #footer .panel-footer {
-  background-color: var(--primary-color) !important;
-  border-color: var(--primary-dark) !important;
-  color: #ffffff !important;
+  background-color: var(--bg-main) !important;
+  border-color: transparent !important;
+  border-top: 1px solid rgba(0,0,0,0.05) !important;
+  color: var(--text-muted) !important;
   padding: 40px 0;
   margin-top: 60px;
 }
 
 #footer .panel-footer a {
-  color: var(--primary-text) !important;
+  color: var(--primary-color) !important;
   transition: var(--transition);
 }
 
 #footer .panel-footer a:hover {
-  color: #ffffff !important;
+  color: var(--primary-dark) !important;
   text-decoration: underline;
 }
 
