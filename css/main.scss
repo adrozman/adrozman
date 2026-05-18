@@ -1,6 +1,5 @@
 ---
----
-
+--- 
 @import "bootstrap";
 
 /* --------------------------------------------------------------------------
@@ -13,23 +12,23 @@
   --primary-dark: #0E6655;
   --primary-light: #A3E4D7;
   --primary-text: #D1F2EB;
-  
+
   /* Text & Backgrounds */
   --text-main: #2C3E50;
   --text-muted: #7F8C8D;
   --bg-main: #F8F9FA;
   --bg-card: #FFFFFF;
-  
+
   /* Utilities */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
-  
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-md: 0 8px 16px rgba(0,0,0,0.06);
-  --shadow-lg: 0 12px 24px rgba(0,0,0,0.1);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.1);
   --shadow-hover: 0 16px 32px rgba(20, 143, 119, 0.15);
-  
+
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -43,7 +42,12 @@ body {
   font-size: 17px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   color: #1A252F;
   letter-spacing: -0.02em;
@@ -78,21 +82,21 @@ h1 {
 }
 
 .navbar-default .navbar-brand,
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav>li>a {
   text-shadow: none !important;
   transition: var(--transition);
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav>li>a {
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav>li>a {
   font-size: 1.75rem !important;
   position: relative;
 }
 
-.navbar-default .navbar-nav > li > a::after {
+.navbar-default .navbar-nav>li>a::after {
   content: '';
   position: absolute;
   width: 0;
@@ -104,7 +108,7 @@ h1 {
   transform: translateX(-50%);
 }
 
-.navbar-default .navbar-nav > li > a:hover::after {
+.navbar-default .navbar-nav>li>a:hover::after {
   width: 70%;
 }
 
@@ -112,7 +116,7 @@ h1 {
   transform: translateY(-1px);
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav>li>a:hover {
   color: #FFFFFF !important;
   transform: translateY(-1px);
 }
@@ -139,6 +143,7 @@ h1 {
   color: rgba(255, 255, 255, 0.8) !important;
   padding: 40px 0;
   margin-top: 60px;
+  font-size: 1.85rem;
 }
 
 #footer .panel-footer a {
@@ -185,7 +190,7 @@ figcaption {
     box-shadow: var(--shadow-md);
     border-radius: var(--radius-lg);
     border: 4px solid white;
-    
+
     &:hover {
       transform: scale(1.02);
       box-shadow: var(--shadow-hover);
@@ -199,8 +204,8 @@ figcaption {
   padding: 30px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0,0,0,0.03);
-  
+  border: 1px solid rgba(0, 0, 0, 0.03);
+
   h2 {
     font-size: 2rem;
     margin-top: 0;
@@ -209,19 +214,19 @@ figcaption {
     padding-bottom: 10px;
     color: var(--primary-dark);
   }
-  
+
   .news-item {
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px dashed rgba(0,0,0,0.08);
-    
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+
     &:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
   }
-  
+
   .news-date {
     font-size: 1.35rem;
     font-weight: 700;
@@ -229,7 +234,7 @@ figcaption {
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-  
+
   .news-headline {
     font-size: 1.6rem;
     font-weight: 500;
@@ -237,14 +242,15 @@ figcaption {
     margin-top: 5px;
     color: var(--text-main);
   }
-  
+
   a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
-    
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       color: var(--primary-dark);
       text-decoration: underline;
     }
@@ -259,10 +265,11 @@ figcaption {
   margin-bottom: 25px;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid rgba(0, 0, 0, 0.03);
   transition: var(--transition);
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     box-shadow: var(--shadow-hover);
     transform: translateY(-4px);
 
@@ -306,7 +313,7 @@ p.byline {
   text-decoration: none;
   color: inherit;
   background: var(--bg-card);
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid rgba(0, 0, 0, 0.03);
   border-radius: var(--radius-md);
   padding: 25px;
   margin-bottom: 25px;
@@ -350,11 +357,12 @@ a.blog-post-card:focus .blog-post-title {
 }
 
 /* Grid & Utilities */
-#gridid img, #picid img {
+#gridid img,
+#picid img {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   transition: var(--transition);
-  
+
   &:hover {
     transform: scale(1.03);
     box-shadow: var(--shadow-hover);
