@@ -3,7 +3,7 @@
   description: An investigation of a hybrid prediction framework coupling CFD-derived turbulence statistics with Amiet's analytical model to predict the Turbulence Ingestion Noise of an eVTOL propeller in edgewise flight. The study compares turbulence parameters extracted from a high-fidelity simulation against a lower-cost actuator line model.
   authors: A. Rozman, A. Piccolo, S. Grace
   link:
-    url: https://www.researchgate.net/publication/405088170_An_Application_of_Amiet's_Model_for_Turbulence_Ingestion_to_eVTOL_Propellers
+    url: https://www.researchgate.net/publication/405088170_An_Application_of_Amiet%27s_Model_for_Turbulence_Ingestion_to_eVTOL_Propellers
     display: 32nd AIAA/CEAS Aeroacoustics Conference (2026)
   highlight: 1
 
