@@ -104,7 +104,7 @@ plt.show()
     
 
 
-When summing the three sine waves it becomes a fairly complex signal. We can see that it becomes more difficult to extract the frequency and amplitude of all the sine waves contained within. A real signal will contain nonzero amplitude across *all* the possible frequencies. To deal with this we use the concept of a **Fourier Transform** to convert a signal in time $f(t)$ to frequency
+When summing the three sine waves, it becomes a fairly complex signal. We can see that it becomes more difficult to extract the frequency and amplitude of all the sine waves contained within. A real signal will contain nonzero amplitude across *all* the possible frequencies. To deal with this we use the concept of a **Fourier Transform** to convert a signal in time $f(t)$ to frequency
 $f(\xi)$. It can be written for a continuous function as:
 
 <center> $f(\xi)=\int_{-\infty}^{\infty} f(t)e^{-i2\pi \xi t}dt$ </center>
@@ -314,7 +314,7 @@ plt.show()
     
 
 
-When we multiply the signal by our Hanning window, we are decreasing the energy in the signal and will therefore the amplitudes outputted by the FFT. To compensate for this, we divide the output by the average value of the windowing function to get the correct amplitudes. The Hanning window is convenient because its average value is 0.5, so the correction is to simply multiply the resulting spectrum by 2. A different correction factor is required for the power to be conserved, and is discussed in the acoustics processing post.
+When we multiply the signal by our Hanning window, we are decreasing the energy in the signal and will therefore decrease the amplitudes outputted by the FFT. To compensate for this, we divide the output by the average value of the windowing function to get the correct amplitudes. The Hanning window is convenient because its average value is 0.5, so the correction is to simply multiply the resulting spectrum by 2. A different correction factor is required for the power to be conserved, and is discussed in the acoustics processing post.
 
 
 ```python
