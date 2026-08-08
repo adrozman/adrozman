@@ -40,7 +40,7 @@ y1 = 3*np.sin(2*np.pi*5*t)
 <summary>View plotting code</summary>
 {% highlight python %}
 # plot the signal, one period at a time
-plt.figure()
+plt.figure(figsize=(10, 5))
 for i in range(5):
     plt.plot(t[100*i:100*(i+1)+1],y1[100*i:100*(i+1)+1])
 
@@ -82,7 +82,7 @@ y = y1+y2+y3
 <summary>View plotting code</summary>
 {% highlight python %}
 # plot the signal components and the sum
-plt.figure()
+plt.figure(figsize=(10, 5))
 
 plt.plot(t, y1)
 plt.plot(t, y2)
@@ -141,7 +141,7 @@ Like we expect from the equation above, the output $X_k$ is complex since it con
 <summary>View plotting code</summary>
 {% highlight python %}
 # Plot the raw FFT output
-plt.figure()
+plt.figure(figsize=(10, 5))
 plt.plot(fq,np.abs(spectrum))
 plt.xlabel("frequency (Hz)", fontsize=14)
 plt.ylabel("Amplitude", fontsize=14)
@@ -182,7 +182,7 @@ spectrum_onesided = np.abs( spectrum[:nt//2] * 2 / nt )
 <summary>View plotting code</summary>
 {% highlight python %}
 # Plot the FFT one-sided FFT spectrum, now scaled properly
-plt.figure()
+plt.figure(figsize=(10, 5))
 plt.plot(fq_onesided, spectrum_onesided)
 plt.xticks([5,10,30])
 plt.xlim(0,100)
@@ -226,7 +226,7 @@ nt = len(t_trim)
 <summary>View plotting code</summary>
 {% highlight python %}
 # Plot the aperiodic, discontinuous time-domain signal
-plt.figure()
+plt.figure(figsize=(10, 5))
 plt.plot(t_trim, y_trim,color='k',linewidth=1.75)
 
 plt.axhline(y[0], linestyle='dotted', color='blue')
@@ -258,7 +258,7 @@ fq = np.fft.fftfreq(nt,dt)[:nt//2]
 <details markdown="0">
 <summary>View plotting code</summary>
 {% highlight python %}
-plt.figure()
+plt.figure(figsize=(10, 5))
 plt.plot(fq,spectrum, label='Raw Signal')
 plt.xticks([5,10,30])
 plt.xlim(0,100)
@@ -286,7 +286,7 @@ We can reduce leakage  by applying *windowing*. Here is the signal multiplied by
 <details markdown="0">
 <summary>View plotting code</summary>
 {% highlight python %}
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(10, 5))
 plt.plot(t_trim, y_trim,color='r',linewidth=1.75)
 ax.plot(t_trim, hann(nt)*y_trim,color='k',linewidth=1.75) 
 ax.set_xlabel("time (s)", fontsize=14)
@@ -336,7 +336,7 @@ spectrum_windowed = np.abs(np.fft.fft(hann(nt)*y_trim)[:nt//2] * 2 / nt)
 <details markdown="0">
 <summary>View plotting code</summary>
 {% highlight python %}
-plt.figure()
+plt.figure(figsize=(10, 5))
 plt.plot(fq,spectrum, label='Raw Signal')
 plt.plot(fq,spectrum_windowed*2, label='Windowed Signal')
 plt.axhline(5,linestyle='dotted',color='blue',label='True Amplitudes')
