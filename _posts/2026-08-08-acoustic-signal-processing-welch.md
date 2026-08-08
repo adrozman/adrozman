@@ -32,6 +32,11 @@ First the example pressure time-series data is loaded and plotted. It is the sig
 
 ```python
 # Load time and pressure data
+import os
+import urllib.request
+url = "https://raw.githubusercontent.com/adrozman/adrozman.github.io/gh-pages/notebooks/yaw70_U10_mic244_pressure.txt"
+if not os.path.exists("yaw70_U10_mic244_pressure.txt"):
+    urllib.request.urlretrieve(url, "yaw70_U10_mic244_pressure.txt")
 time, pressure = np.loadtxt("yaw70_U10_mic244_pressure.txt").T
 
 rpm = 3806
