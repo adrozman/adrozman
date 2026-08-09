@@ -239,7 +239,6 @@ Crucially, Welch's method computes a **power spectrum** (Mean Square), whereas o
 $$ P_{pp}(f) = \frac{1}{K} \sum_{k=1}^{K} \left( \frac{1}{M U} \left| \sum_{n=0}^{M-1} p_k(n) w(n) e^{-j 2\pi f n} \right|^2 \right) $$
 
 where $p_k(n)$ denotes the $k$-th segment of the pressure signal. $U$ is the normalization factor discussed in the previous post which compensates for the reduction in energy by applying the window.
-
 Using a 'boxcar' window ($w(n)=1$ so $U=1$) and a segment length $M=N$ ($N$ is the total number of samples, so the number of segments $K=1$) simplifies this to the power spectrum of a simple FFT with no window:
 
 $$ P_{pp}(f) = \frac{1}{N} \left| \sum_{n=0}^{N-1} p(n) e^{-j 2\pi f n} \right|^2 $$
@@ -254,7 +253,7 @@ Finally, the spectra are converted to **Sound Pressure Level (SPL)** in decibels
 
 $$ SPL = 10 \log_{10} \left( \frac{\overline{p^2}}{p_{ref}^2} \right) \quad [\text{dB}] $$
 
-To compare our manual FFT to Welch's method, the manual amplitude spectrum must first be converted to a Mean Square ($\overline{p^2}$) spectrum. Because the FFT algorithm produces a spectrum of the amplitude of sine waves ($|p|$), a factor of one half is included. This step is done automatically within the Welch function, as it directly outputs the Mean Square:
+To compare our manual FFT to Welch's method, the manual amplitude spectrum must first be converted to a Mean Square ($\overline{p^2}$) spectrum. Because the FFT algorithm produces a spectrum of the amplitude of sine waves ($\vert p \vert$), a factor of one half is included. This step is done automatically within the Welch function, as it directly outputs the Mean Square:
 
 $$ \overline{p^2_{sine}} = \frac{1}{2} |p|^2 $$
 
@@ -337,10 +336,10 @@ For a Hanning window with $\sum_{n} w(n)^2 = \frac{3}{8}N$, the correction facto
 
 ### Summary
 
-| `scaling` | What it preserves | Power normalization | Hanning correction |
-|---|---|---|---|
-| `'spectrum'` | Peak amplitude of discrete tones | $\left(\sum_n w(n)\right)^2$ | $2.0$ |
-| `'density'` | Total integrated energy | $\sum_n w(n)^2$ | $\approx 1.63$ |
+| `scaling` | When to use | What it preserves | Power normalization | Hanning correction |
+|---|---|---|---|---|
+| `'spectrum'` | Analyzing discrete tones (e.g., BPF harmonics) | Peak amplitude of discrete tones | $\left(\sum_n w(n)\right)^2$ | $2.0$ |
+| `'density'` | Analyzing broadband/continuous noise | Total integrated energy | $\sum_n w(n)^2$ | $\approx 1.63$ |
 
 Because these correction factors differ ($2.0 \neq 1.63$), the two scaling options are not interchangeable.
 Even if a `density` scaling output is multiplied by the bin width $\Delta f$ to recover SPL, the result will
