@@ -9,7 +9,7 @@ thumbnail: "/images/posts/acoustic_signal_processing_welch_files/acoustic_signal
 ---
 
 # Acoustic Signal Processing: Welch's Method and SPL vs PSD Scaling
-This post teaches signal processing for acoustics using Python. It provides an interactive example using a realistic pressure signal from a propeller simulation and to produce **Sound Pressure Level (SPL)** and **Power Spectral Density (PSD)** spectra. **Phase-averaging** is introduced to decompose the signal into **deterministic** (tonal) and **nondeterministic** (broadband) components. Then, the "industry standard" **Welch's method** is proposed as the best tool in practice. It is explained using the equivalent case to the basic Fast Fourier Transform, then further advantages and nuances about scalings for tonal vs broadband noise are covered. Open this Jupyter notebook in Colab to follow along and modify, or save for future use:
+This post teaches signal processing for acoustics using Python. It provides an interactive example using a realistic pressure signal from a propeller simulation and demonstrates producing **Sound Pressure Level (SPL)** and **Power Spectral Density (PSD)** spectra. **Phase-averaging** is introduced to decompose the signal into **deterministic** (tonal) and **nondeterministic** (broadband) components. Then, the "industry standard" **Welch's method** is proposed as the best tool in practice. It is explained using the equivalent case to the basic Fast Fourier Transform, then further advantages and nuances about scalings for tonal vs broadband noise are covered. Open this Jupyter notebook in Colab to follow along and modify, or save for future use:
 <a href="https://colab.research.google.com/github/adrozman/adrozman.github.io/blob/gh-pages/notebooks/acoustic_signal_processing_welch.ipynb" target="_blank" rel="noopener noreferrer">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" width="200">
 </a>
@@ -21,13 +21,13 @@ This post teaches signal processing for acoustics using Python. It provides an i
 ```python
 # We will use standard numpy and matplotlib, as well as welch from the scipy.signal library.
 import numpy as np
-from scipy.signal import welch, spectrogram
+from scipy.signal import welch
 import matplotlib.pyplot as plt
 ```
 
 
 ## 1. The Raw Signal, and Tonal and Broadband noise
-First the example pressure time-series data is loaded and plotted. It is the signal in Pascals (Pa) produced by a 5-bladed propeller measured at a location ~$5.9\times R_{propeller}$ from the center at an angle ~$60^{\circ}$ below the disk. The propeller is spinning at a constant 3806 RPM, so it it convenient to nondimensionalize time by the period of rotation. The signal includes a strong 5-perrev signal corresponding to the passage of each blade, called the *Blade Passage Frequency (BPF)*, as well as broadband noise occurring across all frequencies. The repeated component is **deterministic** and can be called **tonal** noise. The random component is **nondeterministic** and is caused by random processes like turbulence. It is often referred to as **broadband** noise, the most common example being white noise. The human ear can perceive frequencies between 20 &mdash; 20,000 Hz, but is most sensitive to frequencies around 3,000 Hz, where human speech lies.
+First the example pressure time-series data is loaded and plotted. It is the signal in Pascals (Pa) produced by a 5-bladed propeller measured at a location ~$5.9\times R_{propeller}$ from the center at an angle ~$60^{\circ}$ below the disk. The propeller is spinning at a constant 3806 RPM, so it is convenient to nondimensionalize time by the period of rotation. The signal includes a strong 5-per-revolution signal corresponding to the passage of each blade, called the *Blade Passage Frequency (BPF)*, as well as broadband noise occurring across all frequencies. The repeated component is **deterministic** and can be called **tonal** noise. The random component is **nondeterministic** and is caused by random processes like turbulence. It is often referred to as **broadband** noise, the most common example being white noise. The human ear can perceive frequencies between 20 &mdash; 20,000 Hz, but is most sensitive to frequencies around 3,000 Hz, where human speech lies.
 
 
 ```python
@@ -99,7 +99,7 @@ num_revs = 10
 # Reshape so each period is in a separate row
 pressure_per_rev = pressure.reshape((num_revs, samples_per_rev))
 
-# Phase average by taking the mean across the columns (revolutions)
+# Phase average by taking the mean across the rows (revolutions)
 pressure_phase_avg = np.mean(pressure_per_rev, axis=0)
 ```
 
@@ -232,15 +232,17 @@ end_idx_excluding_nyquist = int(np.ceil(num_samples / 2))
 fft_onesided[1:end_idx_excluding_nyquist] *= 2
 ```
 
-**Welch's Method** is an approach used to estimate spectra of random data. For a long random signal, variance can be reduced by splitting the signal into $K$ overlapping segments of length $M$, and averaging the spectrum of each segment. It also includes a window function $w(n)$ multiplied to each segment to reduce spectral leakage:
+**Welch's Method** is an approach used to estimate spectra of random data. For a long random signal, variance can be reduced by splitting the signal into $K$ overlapping segments of length $M$, and averaging the spectrum of each segment. It also includes a window function $w(n)$ multiplied to each segment to reduce spectral leakage.
 
-$$ P_{xx}(f) = \frac{1}{K} \sum_{k=1}^{K} \left( \frac{1}{M U} \left| \sum_{n=0}^{M-1} x_k(n) w(n) e^{-j 2\pi f n} \right|^2 \right) $$
+Crucially, Welch's method computes a **power spectrum** (Mean Square), whereas our manual FFT computed an **amplitude spectrum**. The power spectrum of the signal is given by:
 
-$U$ is the normalization factor discussed in the previous post which compensates for the reduction in energy by applying the window.
+$$ P_{pp}(f) = \frac{1}{K} \sum_{k=1}^{K} \left( \frac{1}{M U} \left| \sum_{n=0}^{M-1} p_k(n) w(n) e^{-j 2\pi f n} \right|^2 \right) $$
 
-Using a 'boxcar' window ($w(n)=1$ so $U=1$) and a segment length $M=N$, ($N$ is the total number of samples, so the number of segments $K=1$) simplifies this to a simple FFT with no window, as was calculated to obtain `fft_freqs` above.
+where $p_k(n)$ denotes the $k$-th segment of the pressure signal. $U$ is the normalization factor discussed in the previous post which compensates for the reduction in energy by applying the window.
 
-$$ P_{xx}(f) = \frac{1}{N} \left| \sum_{n=0}^{N-1} x(n) e^{-j 2\pi f n} \right|^2 $$
+Using a 'boxcar' window ($w(n)=1$ so $U=1$) and a segment length $M=N$ ($N$ is the total number of samples, so the number of segments $K=1$) simplifies this to the power spectrum of a simple FFT with no window:
+
+$$ P_{pp}(f) = \frac{1}{N} \left| \sum_{n=0}^{N-1} p(n) e^{-j 2\pi f n} \right|^2 $$
 
 
 ```python
@@ -252,7 +254,7 @@ Finally, the spectra are converted to **Sound Pressure Level (SPL)** in decibels
 
 $$ SPL = 10 \log_{10} \left( \frac{\overline{p^2}}{p_{ref}^2} \right) \quad [\text{dB}] $$
 
-Note that for the manual FFT, the raw amplitude must first be converted to Root Mean Square (RMS). Because the FFT algorithm produces a spectrum of the amplitude of sine waves, a factor of one half is included. This is done automatically within the Welch function:
+To compare our manual FFT to Welch's method, the manual amplitude spectrum must first be converted to a Mean Square ($\overline{p^2}$) spectrum. Because the FFT algorithm produces a spectrum of the amplitude of sine waves ($|p|$), a factor of one half is included. This step is done automatically within the Welch function, as it directly outputs the Mean Square:
 
 $$ \overline{p^2_{sine}} = \frac{1}{2} |p|^2 $$
 
@@ -347,7 +349,7 @@ This is demonstrated in the figure below.
 
 
 ```python
-freqs_tonal, spec_tonal_no_window = welch(pressure_phase_avg, fs=1/dt, window='box', 
+freqs_tonal, spec_tonal_no_window = welch(pressure_phase_avg, fs=1/dt, window='boxcar', 
                                 nperseg=samples_per_rev, scaling='spectrum')
 
 _, spec_tonal1 = welch(pressure_phase_avg, fs=1/dt, window='hann', 
@@ -397,7 +399,7 @@ plt.show()
 
 
 ## 6. Comparing Tonal Extract to Total Signal
-To analyze rotating machinery it is common to look at multiples of the *Blade Passage Frequency* (BPF) $f*N_{blades}$, which will be the frequencies of the tonal noise peaks. The Sound Power Level (SPL) metric is used since the amplitude of the discrete tones is the interest.
+To analyze rotating machinery it is common to look at multiples of the *Blade Passage Frequency* (BPF) $f*N_{blades}$, which will be the frequencies of the tonal noise peaks. The Sound Pressure Level (SPL) metric is used since the amplitude of the discrete tones is the interest.
 
 Below, the SPL of the total signal's $p(t)$ is compared to the peaks of the SPL of the phase-averaged tonal noise $\bar{p}(\tau)$.
 
