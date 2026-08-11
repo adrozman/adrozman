@@ -337,11 +337,11 @@ Each normalization is derived below using a Hanning window for example values.
 
 ### Amplitude Correction — `scaling='spectrum'` (Tonal Noise)
 For tonal noise, energy is concentrated at discrete frequencies. The goal is to recover the true peak amplitude at each tone.
-A tone at frequency $f_0$ oscillates at a single frequency, so all $N$ windowed samples add in phase in the DFT sum:
-$$ \left|\sum_{n=0}^{N-1} x(n)\, w(n)\, e^{-j 2\pi f_0 n}\right| = A \sum_{n=0}^{N-1} w(n) = A\,\bar{w}\,N $$
+A tone at frequency $f_0$ oscillates at a single frequency, so all $N$ windowed samples add in phase in the Fourier-transformed sum:
+$$ \left|\sum_{n=0}^{N-1} x(n)\, w(n)\, e^{-j 2\pi f_0 n}\right| = A \sum_{n=0}^{N-1} w(n) $$.
 Because the samples add in phase, the magnitude at a single bin scales with $\sum_{n} w(n)$.
 Dividing the squared magnitude by $\left(\sum_{n} w(n)\right)^2$ recovers $A^2$. This is `1 / win.sum()**2` in the SciPy source code.
-For a Hanning window with $\bar{w} = 0.5$, the correction factor is $\sqrt{1/0.5^2} = \mathbf{2}$.
+For a Hanning window, the mean value of the window is exactly $0.5$, so the amplitude correction factor is $1/0.5 = \mathbf{2.0}$.
 
 ### Energy Correction — `scaling='density'` (Broadband Noise)
 For broadband noise, energy is spread across all frequencies. The goal is to preserve the total signal energy (variance).
@@ -349,7 +349,7 @@ When frequency contributions are independent, their *powers* (not amplitudes) ad
 with $\sum_{n} w(n)^2$.
 Dividing by $\sum_{n} w(n)^2$ recovers the true total energy, and dividing by $f_s$ converts to density
 (power per Hz), giving `1 / (fs * (win*win).sum())` from the SciPy source code.
-For a Hanning window with $\sum_{n} w(n)^2 = \frac{3}{8}N$, the correction factor is $\sqrt{8/3} \approx \mathbf{1.63}$, excluding the bandwidth.
+For a Hanning window, the sum of the squared weights is exactly $3/8$, so the root-mean-square amplitude correction factor is $\sqrt{8/3} \approx \mathbf{1.63}$, excluding the bandwidth which the SciPy function includes.
 
 ### Summary
 
