@@ -252,7 +252,7 @@ Additionally, a window $w(n)$ can be multiplied to each segment to reduce spectr
 Another crucial detail is that Welch's method directly computes the mean-square spectrum, also called the autospectrum.
 The one-sided autospectrum using FFT via Welch's method is:
 
-$$ P_{xx}(f) = \frac{1}{2 K U} \sum_{k=1}^{K} \left| \frac{2}{M} \sum_{n=0}^{M-1} p_k(n) w(n) e^{-j 2\pi f n} \right| ^2 $$
+$$ P_{xx}(f) = \frac{1}{2 K} \sum_{k=1}^{K} \left| \frac{2 U}{M} \sum_{n=0}^{M-1} p_k(n) w(n) e^{-j 2\pi f n} \right| ^2 \tag{1} $$
 
 where $p_k(n)$ is the time-domain pressure signal of segment $K$ and $U$ is a normalization factor which compensates for the amplitude reduction caused by applying the window.
 This value will be discussed in the next section.
@@ -319,13 +319,15 @@ plt.title("Equivalence between FFT and Welch's Method", fontsize=FONT_SIZE_TITLE
 
 
 ## 5. Window Correction Factors (Amplitude vs Energy)
-From the Welch equation in Section 4, the normalization factor $U$ compensates for the energy reduction caused by the window function.
+From the Welch equation in Section 4 (Equation 1), the normalization factor $U$ compensates for the energy reduction caused by the window function.
 However, the correction depends on whether the noise is tonal or broadband. 
 Analysis of tones that occur at exact frequencies requires the preservation of peak amplitudes, while analysis of continuous broadband spectra requires preservation of total energy.
 
-SciPy's `welch` function encodes this distinction directly in the `scaling` argument:
+### Correction in SciPy Welch Function
 
-[From scipy/signal/_spectral_py.py](https://github.com/scipy/scipy/blob/main/scipy/signal/_spectral_py.py):
+SciPy's `welch` function encodes this distinction in the `scaling` argument:
+
+[From scipy/signal/_spectral_py.py (v1.18.0)](https://github.com/scipy/scipy/blob/main/scipy/signal/_spectral_py.py):
 ```python
 if scaling == 'density':
     scale = 1.0 / (fs * (win*win).sum())
@@ -333,30 +335,48 @@ elif scaling == 'spectrum':
     scale = 1.0 / win.sum()**2
 ```
 
-Each normalization is derived below using a Hanning window for example values.
+In the SciPy implementation, the `scale` variable also includes the normalization by the segment length $M$ and is moved outside of the squared term as written in Equation 1. 
+The divisor $\mathtt{fs} = M / T$ used in `density` scaling introduces a factor $M$ in addition to dividing by the frequency bin width $1/T$ to achieve a density spectrum.
+For `density` scaling:
+
+$$
+\begin{gathered}
+U_{density} = \sqrt{\mathtt{scipy.signal.\_spectral\_py.\_spectral\_helper.scale} \times M \times T} \\
+  = \sqrt{\frac{M}{ \sum_{n=0}^{M-1} w(n)^2 }} = \overline{w(n)^2}^{-1/2} 
+\end{gathered}
+$$
+
+
+and for `spectrum` scaling:
+
+$$
+\begin{gathered}
+U_{spectrum} = \sqrt{\mathtt{scipy.signal.\_spectral\_py.\_spectral\_helper.scale} \times M^2}  \\
+  = \sqrt{\frac{M^2}{\left(\sum_{n=0}^{M-1} w(n) \right)^2}} = \frac{M}{\sum_{n=0}^{M-1} w(n)} = \overline{w(n)}^{-1}
+\end{gathered}
+$$
+
+The correction factors for each scaling method are derived below using a Hanning window for example.
+
+### Energy Correction — `scaling='density'` (Broadband Noise)
+For broadband noise, energy is spread across all frequencies. The goal is to preserve the total energy, or variance of the signal.
+When frequency contributions are independent, their energies add incoherently, so the total energy across all bins scales with $\sum_n w(n)^2$.
+For a Hanning window, this sum evaluates to $3M/8$.
+Therefore, $U_{density} = \sqrt{\frac{M}{3M/8}} = \sqrt{8/3} \approx \mathbf{1.63}$.
 
 ### Amplitude Correction — `scaling='spectrum'` (Tonal Noise)
 For tonal noise, energy is concentrated at discrete frequencies. The goal is to recover the true peak amplitude at each tone.
-A tone at frequency $f_0$ oscillates at a single frequency, so all $N$ windowed samples add in phase in the Fourier-transformed sum:
-$$ \left|\sum_{n=0}^{N-1} x(n)\, w(n)\, e^{-j 2\pi f_0 n}\right| = A \sum_{n=0}^{N-1} w(n) $$.
-Because the samples add in phase, the magnitude at a single bin scales with $\sum_{n} w(n)$.
-Dividing the squared magnitude by $\left(\sum_{n} w(n)\right)^2$ recovers $A^2$. This is `1 / win.sum()**2` in the SciPy source code.
-For a Hanning window, the mean value of the window is exactly $0.5$, so the amplitude correction factor is $1/0.5 = \mathbf{2.0}$.
-
-### Energy Correction — `scaling='density'` (Broadband Noise)
-For broadband noise, energy is spread across all frequencies. The goal is to preserve the total signal energy (variance).
-When frequency contributions are independent, their *powers* (not amplitudes) add, so the total energy across all bins scales
-with $\sum_{n} w(n)^2$.
-Dividing by $\sum_{n} w(n)^2$ recovers the true total energy, and dividing by $f_s$ converts to density
-(power per Hz), giving `1 / (fs * (win*win).sum())` from the SciPy source code.
-For a Hanning window, the sum of the squared weights is exactly $3/8$, so the root-mean-square amplitude correction factor is $\sqrt{8/3} \approx \mathbf{1.63}$, excluding the bandwidth which the SciPy function includes.
+A tone oscillates at a single frequency $f_0$, so all $M$ windowed samples add coherently in the Fourier-transformed sum.
+The resulting magnitude $A$ at a single bin is proportional to the sum of the window weights:
+$$ A \sum_{n=0}^{M-1} w(n) $$.
+For a Hanning window, this sum evaluates to $M/2$, therefore $U_{spectrum} = \frac{M}{M/2} = \mathbf{2.0}$.
 
 ### Summary
 
-| `scaling` | When to use | What it preserves | Power normalization | Hanning correction |
+| `scaling` | When to use | What it preserves | Correction | Hanning Correction |
 |---|---|---|---|---|
-| `'spectrum'` | Analyzing discrete tones (e.g., BPF harmonics) | Peak amplitude of discrete tones | $\left(\sum_n w(n)\right)^2$ | $2.0$ |
-| `'density'` | Analyzing broadband/continuous noise | Total integrated energy | $\sum_n w(n)^2$ | $\approx 1.63$ |
+| `'density'` | Analyzing broadband/continuous noise | Total integrated energy | $\overline{w(n)^2}^{-1/2}$ | $\approx 1.63$ |
+| `'spectrum'` | Analyzing discrete tones (e.g., BPF harmonics) | Peak amplitude of discrete tones | $\overline{w(n)}^{-1}$ | $2.0$ |
 
 Because these correction factors differ ($2.0 \neq 1.63$), the two scaling options are not interchangeable.
 Even if a `density` scaling output is multiplied by the bin width $\Delta f$ to recover SPL, the result will
