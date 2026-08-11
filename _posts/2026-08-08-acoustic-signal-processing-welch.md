@@ -336,12 +336,12 @@ elif scaling == 'spectrum':
 ```
 
 In the SciPy implementation, the `scale` variable also includes the normalization by the segment length $M$ and is moved outside of the squared term as written in Equation 1. 
-The divisor $\mathtt{fs} = M / T$ used in `density` scaling introduces a factor $M$ in addition to dividing by the frequency bin width $1/T$ to achieve a density spectrum.
+The divisor $\mathtt{fs} = M / T$ used in `density` scaling introduces the frequency bin width $1/T$ to achieve a density spectrum.
 For `density` scaling:
 
 $$
 \begin{gathered}
-U_{density} = \sqrt{\mathtt{scipy.signal.\_spectral\_py.\_spectral\_helper.scale} \times M \times T} \\
+U_{density} = \sqrt{\mathtt{scipy.signal.\_spectral\_py.\_spectral\_helper.scale} \times M^2 \times T} \\
   = \sqrt{\frac{M}{ \sum_{n=0}^{M-1} w(n)^2 }} = \overline{w(n)^2}^{-1/2} 
 \end{gathered}
 $$
