@@ -9,7 +9,7 @@ thumbnail: "/images/posts/acoustic_signal_processing_welch_files/acoustic_signal
 ---
 
 # Acoustic Signal Processing: Welch's Method and SPL vs PSD Scaling
-This post teaches signal processing for acoustics using Python. 
+This article teaches signal processing for acoustics using Python. 
 It provides an interactive example using a realistic pressure signal from a propeller simulation and demonstrates producing **Sound Pressure Level (SPL)** and **Power Spectral Density (PSD)** spectra. 
 **Phase-averaging** is introduced to decompose the signal into **deterministic** (tonal) and **nondeterministic** (broadband) components. 
 Then, the "industry standard" **Welch's method** is proposed as the best tool in practice. 
@@ -19,8 +19,8 @@ Open this Jupyter notebook in Colab to follow along and modify, or save for futu
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" width="200">
 </a>
 
-*For a refresher on the fundamentals of signals and Fast Fourier Transforms, refer to the first post: [FFT Signal Analysis using Python](https://adrozman.github.io/blog/fft-fundamentals-python/). 
-This post will assume understanding of the topics presented there.*
+*For a refresher on the fundamentals of signals and Fast Fourier Transforms, refer to the first article: [FFT Signal Analysis using Python](https://adrozman.github.io/blog/fft-fundamentals-python/). 
+This article will assume understanding of the topics presented there.*
 
 
 
@@ -218,7 +218,7 @@ plt.title("Signal Decomposition (One Revolution)", fontsize=FONT_SIZE_TITLE)
 ## 4. Frequency Domain: FFT vs Welch's Method
 Noise analysis ultimately requires examination in the frequency domain, and in practice, engineers usually use Welch's method. 
 This approach can be explained by introducing the simple case in which Welch's method is equivalent to a standard Fast Fourier Transform (FFT). 
-*(For a refresher on FFT fundamentals, refer to the post: 
+*(For a refresher on FFT fundamentals, refer to the article: 
 [FFT Signal Analysis using Python](https://adrozman.github.io/blog/fft-fundamentals-python/))*
 
 
