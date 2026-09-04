@@ -323,9 +323,15 @@ From the Welch equation in Section 4 (Equation 1), the normalization factor $U$ 
 However, the correction depends on whether the noise is tonal or broadband. 
 Analysis of tones that occur at exact frequencies requires the preservation of peak amplitudes, while analysis of continuous broadband spectra requires preservation of total energy.
 
-### Correction in SciPy Welch Function
+SciPy's `welch` function encodes this distinction in the `scaling` argument. This corresponds directly to MATLAB's `spectrumType` argument for the `pwelch` function.
 
-SciPy's `welch` function encodes this distinction in the `scaling` argument:
+| | Python (SciPy) `welch` | MATLAB `pwelch` |
+| :--- | :--- | :--- |
+| Argument | `scaling` | `spectrumType` |
+| Power Spectral Density | `"density"` (default) | `"psd"` (default) |
+| Power Spectrum | `"spectrum"` | `"power"` |
+
+### Correction in SciPy Welch Function
 
 [From scipy/signal/_spectral_py.py (v1.18.0)](https://github.com/scipy/scipy/blob/main/scipy/signal/_spectral_py.py):
 ```python

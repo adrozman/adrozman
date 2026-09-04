@@ -3,3 +3,4 @@ _site
 .jekyll-metadata
 *.nfs*
 _posts/2026-08-11-jet-wedge.md
+launch_server.sh
