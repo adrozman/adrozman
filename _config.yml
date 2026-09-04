@@ -36,8 +36,15 @@ include:
   - _pages
 
 plugins:
+  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
+
+defaults:
+  - scope:
+      path: "googlefe317d36a0316c62.html"
+    values:
+      sitemap: false
 
 sass:
   sass_dir: _sass
